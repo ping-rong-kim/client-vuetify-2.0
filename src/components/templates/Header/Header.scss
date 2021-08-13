@@ -1,0 +1,349 @@
+::v-deep .toolbar-title {
+  color: var(--v-textBlack-base);
+}
+::v-deep #signupDesktopNav {
+  //border-radius: 5px;
+  //border-color: rgb(95, 95, 95);
+}
+::v-deep #logoutDesktopNav {
+  //border-color: rgba(95, 95, 95);
+}
+
+::v-deep #mobileNav {
+  z-index: 200;
+  #dashboardMobileNav {
+    .dash-icon {
+      &::after {
+        z-index: 1;
+        position: absolute;
+        background: url("/img/icons/mobile-dash.svg");
+        top: 12px;
+        left: 20px;
+        visibility: visible;
+        content: "";
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+      }
+    }
+
+    &.v-list__tile--active {
+      .dash-icon {
+        &::after {
+          background: url("/img/icons/mobile-dash-active.svg");
+          z-index: 1;
+          position: absolute;
+          top: 12px;
+          left: 20px;
+          visibility: visible;
+          content: "";
+          background-repeat: no-repeat;
+          width: 30px;
+          height: 30px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+::v-deep .desktopNav {
+  z-index: 50;
+  .nav-desktop-dash {
+    &::after {
+      z-index: 1;
+      position: absolute;
+      background: url("/img/icons/dash.svg");
+      top: 25px;
+      left: 0px;
+      visibility: visible;
+      content: "";
+      background-repeat: no-repeat;
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+    }
+    &.v-btn--active {
+      &::after {
+        background: url("/img/icons/dash active.svg");
+        z-index: 1;
+        position: absolute;
+        top: 25px;
+        visibility: visible;
+        content: "";
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+      }
+    }
+  }
+
+  .nav-desktop-search {
+    &::after {
+      z-index: 1;
+      position: absolute;
+      background: url("/img/icons/searches.svg");
+      top: 25px;
+      left: 0px;
+      visibility: visible;
+      content: "";
+      background-repeat: no-repeat;
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+    }
+    &.v-btn--active {
+      &::after {
+        background: url("/img/icons/searches active.svg");
+        z-index: 1;
+        position: absolute;
+        top: 25px;
+        visibility: visible;
+        content: "";
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+      }
+    }
+  }
+  .nav-desktop-calc-mortgage {
+    &::after {
+      z-index: 1;
+      position: absolute;
+      background: url("/img/icons/mortgage_calculator.svg");
+      top: 25px;
+      left: 0px;
+      visibility: visible;
+      content: "";
+      background-repeat: no-repeat;
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+    }
+    &.v-btn--active {
+      &::after {
+        background: url("/img/icons/mortgage_calculator-active.svg");
+        z-index: 1;
+        position: absolute;
+        top: 25px;
+        visibility: visible;
+        content: "";
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+      }
+    }
+  }
+  .nav-desktop-mortgage {
+    &::after {
+      z-index: 1;
+      position: absolute;
+      background: url("/img/icons/mortgage-active.svg");
+      top: 25px;
+      left: 0px;
+      visibility: visible;
+      content: "";
+      background-repeat: no-repeat;
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+    }
+    &.v-btn--active {
+      &::after {
+        background: url("/img/icons/mortgage-active.svg");
+        z-index: 1;
+        position: absolute;
+        top: 25px;
+        visibility: visible;
+        content: "";
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+      }
+    }
+  }
+  .nav-desktop-property {
+    &::after {
+      z-index: 1;
+      position: absolute;
+      background: url("/img/icons/property.svg");
+      top: 25px;
+      left: 0px;
+      visibility: visible;
+      content: "";
+      background-repeat: no-repeat;
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+    }
+    &.v-btn--active {
+      &::after {
+        background: url("/img/icons/property-active.svg");
+        z-index: 1;
+        position: absolute;
+        top: 25px;
+        visibility: visible;
+        content: "";
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+      }
+    }
+  }
+  .nav-desktop-credit {
+    &::after {
+      z-index: 1;
+      position: absolute;
+      background: url("/img/icons/credit-score.svg");
+      top: 25px;
+      left: 0px;
+      visibility: visible;
+      content: "";
+      background-repeat: no-repeat;
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+    }
+    &.v-btn--active {
+      &::after {
+        background: url("/img/icons/credit-score-active.svg");
+        z-index: 1;
+        position: absolute;
+        top: 25px;
+        visibility: visible;
+        content: "";
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+      }
+    }
+  }
+
+  .v-btn {
+    i {
+      color: #6c6c86 !important;
+    }
+  }
+
+  .v-btn--active {
+    div {
+      color: var(--v-primary-base);
+      background-color: transparent !important;
+    }
+    i {
+      color: var(--v-primary-base) !important;
+    }
+  }
+}
+.theme--light {
+  .v-toolbar {
+    &.navBar{
+      background-color: white !important;
+    }
+    &.transparent{
+      box-shadow: none !important;
+    }
+    //box-shadow: 0 2px 28px 0 rgba(223, 223, 239, 0.5) !important;
+  }
+}
+
+.card-top {
+  top: 70px !important;
+}
+/*
+    v-btn--active v-btn v-btn--flat v-btn--router theme--light
+    */
+
+::v-deep .with-green-pointer .v-btn--active div::after {
+  z-index: 1;
+  position: absolute;
+  background: url("/img/icons/active tab.svg");
+  top: 25px;
+  visibility: visible;
+  content: "";
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+}
+::v-deep .desktopNav a.primary.v-btn--active div {
+  color: #fff;
+}
+::v-deep .desktopNav a.v-btn--active {
+  //color: transparent !important;
+}
+
+::v-deep .activator-icon {
+  background: transparent;
+}
+
+::v-deep .desktopNav .v-btn--active .theme--light.v-btn {
+  background-color: white !important;
+}
+/*v-btn--active v-btn v-btn--flat v-btn--router theme--light */
+
+::v-deep nav {
+  /* height: 64px;*/
+}
+
+/*
+    primary--text
+    v-list__tile--active
+    v-list__tile v-list__tile--link theme--dark
+    */
+::v-deep .mobileNav a.v-list__tile--active {
+  color: var(--v-textBlack-base) !important;
+  font-weight: bold;
+}
+::v-deep #desktopNav > a:not(.no-pad) {
+  padding-left: 30px !important;
+}
+::v-deep #desktopNav > a {
+  border-radius: 0 !important;
+}
+::v-deep #desktopNav > a:after {
+  left: 10px !important;
+}
+::v-deep #timelineMobileNav {
+  color: #fff !important;
+}
+
+@media only screen and(max-width: 1050px) {
+  ::v-deep #desktopNav > a {
+    font-size: 12px !important;
+    padding: 0 10px;
+  }
+}
+.app__header{
+  .mobileNav{
+    .app-mobile-toolbar{
+      .toolbar-title{
+      }
+      .v-toolbar__items{
+        .v-btn{
+          &:not(.v-btn--flat) {
+            height: 36px !important;
+            &.login-btn{
+              border-radius: 5px;
+              border-color: rgb(95, 95, 95);
+            }
+            @media all and (max-width: 400px) {
+              padding-left: 10px;
+              padding-right: 10px;
+              min-width: 80px;
+            }
+            @media all and (max-width: 350px) {
+              height: 32px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

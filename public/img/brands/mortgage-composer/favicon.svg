@@ -1,0 +1,23 @@
+<svg width="416" height="270" xmlns="http://www.w3.org/2000/svg">
+ <style type="text/css">.st0{fill:#FFFFFF;}
+	.st1{fill:#4A55A5;}
+	.st2{fill:#767586;}</style>
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="272" width="418" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_1">
+   <rect id="svg_2" height="270.3" width="415.5" class="st0" y="0.00001" x="8.90001"/>
+   <polygon rx="4" id="svg_3" points="0,0 0,270.4000244140625 108.0999755859375,270.4000244140625 370.4000244140625,32.4000244140625 424.2999267578125,86.5999755859375 424.2999267578125,0 " class="st1"/>
+   <g id="svg_4">
+    <rect id="svg_5" height="47.4" width="48.4" class="st1" y="223.00001" x="375.90001"/>
+    <rect id="svg_6" height="47.4" width="48.4" class="st1" y="223.00001" x="316.30001"/>
+    <rect id="svg_7" height="47.4" width="48.4" class="st1" y="164.70001" x="316.30001"/>
+    <rect id="svg_8" height="47.4" width="48.4" class="st1" y="164.70001" x="375.90001"/>
+   </g>
+  </g>
+ </g>
+</svg>

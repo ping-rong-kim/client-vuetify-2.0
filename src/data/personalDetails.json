@@ -1,0 +1,16 @@
+{
+  "employmentStatusList": [
+    {
+      "label": "Employed",
+      "value": "employed"
+    },
+    {
+      "label": "Self-employed",
+      "value": "self-employed"
+    },
+    {
+      "label": "Retired",
+      "value": "retired"
+    }
+  ]
+}

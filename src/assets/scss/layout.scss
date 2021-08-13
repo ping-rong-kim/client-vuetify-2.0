@@ -1,0 +1,246 @@
+.d-flex .col-auto, .col-auto {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  &-important {
+    flex-basis: auto !important;
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+.mx-4-minus {
+  margin-left: -24px;
+  margin-right: -24px;
+}
+
+.mx-3-minus {
+  margin-left: -16px;
+  margin-right: -16px;
+}
+
+.mx-1-minus {
+  margin-left: -4px;
+  margin-right: -4px;
+}
+
+@media all and (max-width: 400px) {
+  .min-width-xxs-0 {
+    min-width: 0 !important;
+  }
+}
+
+@media all and (min-width: 600px) {
+  .d-sm {
+    &-flex {
+      display: flex;
+    }
+  }
+  .col-sm-auto {
+    width: auto;
+    flex-basis: auto;
+    min-width: initial;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+  .col-sm-auto-important {
+    width: auto !important;
+    flex-basis: auto !important;
+    min-width: initial !important;
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-v-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  &-important {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
+.flex-grow {
+  flex-grow: 1;
+}
+
+.app-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  @mixin col-maker($colName, $colSize: none, $colBreakPoint: none) {
+    > .#{$colName} {
+      padding-left: 15px;
+      padding-right: 15px;
+      @if ($colBreakPoint == none) {
+        @if ($colSize == auto) {
+          flex: 0 0 auto;
+          width: auto;
+          max-width: none;
+        } @else if ($colSize == none) {
+          flex-basis: 0;
+          flex-grow: 1;
+          min-height: 1px;
+          width: 100%;
+          max-width: 100%;
+        } @else {
+          width: 100%;
+          flex: 0 0 $colSize * 100% / 12;
+          max-width: $colSize * 100% / 12;
+        }
+      } @else {
+        @media all and (min-width: #{$colBreakPoint}px) {
+          @if ($colSize == auto) {
+            flex: 0 0 auto;
+            width: auto;
+            max-width: none;
+          } @else if ($colSize == none) {
+            flex-basis: 0;
+            flex-grow: 1;
+            min-height: 1px;
+            width: 100%;
+            max-width: 100%;
+          } @else {
+            flex: 0 0 $colSize * 100% / 12;
+            width: 100%;
+            max-width: $colSize * 100% / 12;
+          }
+        }
+      }
+    }
+    &.col-space-0 > .#{$colName} {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    &.col-space-md > .#{$colName} {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  @mixin col-maker-less($colName, $colSize: none, $colBreakPoint: none) {
+    > .#{$colName} {
+      padding-left: 15px;
+      padding-right: 15px;
+      @media all and (max-width: #{$colBreakPoint}px) {
+        @if ($colSize == auto) {
+          flex: 0 0 auto;
+          width: auto;
+          max-width: none;
+        } @else if ($colSize == none) {
+          flex-basis: 0;
+          flex-grow: 1;
+          min-height: 1px;
+          width: 100%;
+          max-width: 100%;
+        } @else {
+          flex: 0 0 $colSize * 100% / 12;
+          width: 100%;
+          max-width: $colSize * 100% / 12;
+        }
+      }
+    }
+    &.col-space-0 > .#{$colName} {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  @include col-maker(app-col);
+  @include col-maker(app-col-auto, auto);
+  @include col-maker(app-col-1, 1);
+  @include col-maker(app-col-2, 2);
+  @include col-maker(app-col-3, 3);
+  @include col-maker(app-col-4, 4);
+  @include col-maker(app-col-5, 5);
+  @include col-maker(app-col-6, 6);
+  @include col-maker(app-col-7, 7);
+  @include col-maker(app-col-12, 12);
+
+  @include col-maker-less(app-col-xxs, none, 400);
+  @include col-maker-less(app-col-xxs-12, 12, 400);
+
+  @include col-maker(app-col-sm-auto, auto, 601);
+  @include col-maker(app-col-sm-3, 3, 601);
+  @include col-maker(app-col-sm-4, 4, 601);
+  @include col-maker(app-col-sm-5, 5, 601);
+  @include col-maker(app-col-sm-6, 6, 601);
+  @include col-maker(app-col-sm-7, 7, 601);
+  @include col-maker(app-col-sm-8, 8, 601);
+  @include col-maker(app-col-sm-9, 9, 601);
+  @include col-maker(app-col-sm-10, 10, 601);
+  @include col-maker(app-col-sm-11, 11, 601);
+  @include col-maker(app-col-sm-12, 12, 601);
+
+  @include col-maker(app-col-md-2, 2, 960);
+  @include col-maker(app-col-md-3, 3, 960);
+  @include col-maker(app-col-md-4, 4, 960);
+  @include col-maker(app-col-md-5, 5, 960);
+  @include col-maker(app-col-md-6, 6, 960);
+  @include col-maker(app-col-md-7, 7, 960);
+  @include col-maker(app-col-md-8, 8, 960);
+  @include col-maker(app-col-md-9, 9, 960);
+  @include col-maker(app-col-md-auto, auto, 960);
+
+  @include col-maker(app-col-lg, none, 1264);
+  @include col-maker(app-col-lg-auto, auto, 1264);
+  @include col-maker(app-col-lg-1, 1, 1264);
+  @include col-maker(app-col-lg-2, 2, 1264);
+  @include col-maker(app-col-lg-3, 3, 1264);
+  @include col-maker(app-col-lg-4, 4, 1264);
+  @include col-maker(app-col-lg-5, 5, 1264);
+  @include col-maker(app-col-lg-6, 6, 1264);
+  @include col-maker(app-col-lg-7, 7, 1264);
+  @include col-maker(app-col-lg-12, 12, 1264);
+
+  @media all and (min-width: 960px) {
+    .app-col-md-gs {
+      max-width: 100% !important;
+      flex-shrink: 1 !important;
+      flex-grow: 1 !important;
+    }
+  }
+
+  &.col-space-0 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  &.col-space-md {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+}
+
+.px-5px {
+  padding-left: 5px;
+  padding-right: 5px;
+
+  &-important {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+}
+@media all and (max-width: 600px) {
+  .w-xs-full {
+    width: 100%;
+    &--important {
+      width: 100% !important;
+    }
+  }
+}

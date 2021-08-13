@@ -1,0 +1,40 @@
+.profile-page{
+  .page__header{
+    margin-bottom: 20px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    overflow: hidden;
+    .v-tabs{
+      .tab__item{
+        .tab__name{
+          padding: 20px 5px;
+          font-size: 14px;
+          font-weight: 600;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: var(--v-textBlack-base);
+        }
+        &.tab__item--active{
+          .tab__name{
+            color: var(--v-primary-base);
+          }
+        }
+      }
+    }
+  }
+}
+.v-tab:before {
+  background-color: unset;
+  bottom: 0;
+  content: "";
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+}

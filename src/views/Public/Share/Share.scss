@@ -1,0 +1,27 @@
+.test-page{
+  background-color: white;
+  padding: 30px;
+  margin: 30px;
+}
+.test-page {
+  .social__item {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    margin: 0px 5px;
+    opacity: 0.7;
+    svg {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    span {
+      vertical-align: middle;
+      line-height: 1.1;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
