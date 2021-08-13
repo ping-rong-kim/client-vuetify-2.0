@@ -26,7 +26,7 @@ export default {
       }
     },
     logout() {
-      //  tell the server  !
+      //  tell the server !!
       if (this.$store.state.clientCenter.currentPage.hasUnsavedChanges) {
         this.$confirmDialog
           .confirm({
