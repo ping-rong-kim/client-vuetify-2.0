@@ -59,7 +59,7 @@ export default {
     this.removeActivityListener();
     if (this.onInactive && !this.isSessionAboutCalled) {
       console.log(
-        "I am In inactiveUserAction of AcitivityHelper !!!" + this.onInactive()
+        "I am In inactiveUserAction of AcitivityHelper !!!!" + this.onInactive()
       );
       this.isInactiveCalled = true;
       this.onInactive();
