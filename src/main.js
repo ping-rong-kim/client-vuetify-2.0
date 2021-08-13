@@ -234,7 +234,7 @@ new Vue({
   },
   methods: {
     onInactive() {
-      // console.log("I am in Main !!!!!!!!!!!");
+      console.log("I am in Main !!!!!!!!!!!");
       if (this.$authService.isLoggedIn) {
         this.$confirmDialog
           .confirm({

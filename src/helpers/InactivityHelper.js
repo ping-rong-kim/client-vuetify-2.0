@@ -58,9 +58,9 @@ export default {
     clearTimeout(this.addActivityListenerTimeout);
     this.removeActivityListener();
     if (this.onInactive && !this.isSessionAboutCalled) {
-      // console.log(
-      //   "I am In inactiveUserAction of AcitivityHelper !!!" + this.onInactive()
-      // );
+      console.log(
+        "I am In inactiveUserAction of AcitivityHelper !!!" + this.onInactive()
+      );
       this.isInactiveCalled = true;
       this.onInactive();
     }
