@@ -3,7 +3,8 @@ import AppHelper from "@/helpers/AppHelper";
 import AppEnv from "@/AppEnv";
 
 export default {
-  INACTIVE_USER_TIME_THRESHOLD: AppEnv.VUE_APP_INACTIVE_THRESHOLD_SECONDS * 5,
+  INACTIVE_USER_TIME_THRESHOLD:
+    AppEnv.VUE_APP_INACTIVE_THRESHOLD_SECONDS * 1000,
   USER_ACTIVITY_THROTTLER_TIME:
     AppEnv.VUE_APP_ACTIVITY_THROTTLER_SECONDS * 1000,
   userActivityTimeout: null,

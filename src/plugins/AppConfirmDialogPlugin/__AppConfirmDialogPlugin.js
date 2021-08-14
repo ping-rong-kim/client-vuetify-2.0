@@ -1,6 +1,9 @@
 import AppConfirmDialog from "@/common-components/AppConfirmDialog/AppConfirmDialog";
-import vuetify from "@/plugins/vuetify";
+
 let AppConfirmDialogPlugin = function(Vue, globalOptions = {}) {
+  console.log(
+    " 0 AppConfirmDialogPlugin Constructor ---- in AppConfirmDialogPlugin"
+  );
   this.Vue = Vue;
   this.mounted = false;
   this.$root = {}; // The root component
@@ -16,8 +19,12 @@ let AppConfirmDialogPlugin = function(Vue, globalOptions = {}) {
     },
     globalOptions
   );
+  console.log(
+    " 1 AppConfirmDialogPlugin Constructor ---- in AppConfirmDialogPlugin"
+  );
 };
 AppConfirmDialogPlugin.prototype.mountIfNotMounted = function() {
+  console.log(" 0 mountIfNotMounted ---- in AppConfirmDialogPlugin");
   if (this.mounted === true) {
     return;
   }
@@ -26,12 +33,16 @@ AppConfirmDialogPlugin.prototype.mountIfNotMounted = function() {
     let DialogConstructor = this.Vue.extend(AppConfirmDialog);
     let node = document.createElement("div");
     document.querySelector("body").appendChild(node);
+    // document.querySelector("#app").appendChild(node);
 
-    let Vm = new DialogConstructor({ vuetify });
+    let Vm = new DialogConstructor();
 
     return Vm.$mount(node);
   })();
-
+  console.log(
+    " 1 mountIfNotMounted ---- in AppConfirmDialogPlugin",
+    this.$root
+  );
   this.mounted = true;
 };
 
@@ -46,6 +57,7 @@ AppConfirmDialogPlugin.prototype.destroy = function() {
 };
 
 AppConfirmDialogPlugin.prototype.confirm = function(options) {
+  console.log(" confirm ---- in AppConfirmDialogPlugin");
   return this.open(options);
 };
 AppConfirmDialogPlugin.prototype.updateData = function(options) {
@@ -54,6 +66,7 @@ AppConfirmDialogPlugin.prototype.updateData = function(options) {
   }
 };
 AppConfirmDialogPlugin.prototype.open = function(localOptions = {}) {
+  console.log(" open ---- in AppConfirmDialogPlugin");
   this.mountIfNotMounted();
   return new Promise((resolve, reject) => {
     localOptions.promiseResolver = resolve;
@@ -64,8 +77,13 @@ AppConfirmDialogPlugin.prototype.open = function(localOptions = {}) {
 };
 
 AppConfirmDialogPlugin.install = function(Vue, options) {
+  console.log(
+    "0 AppConfirmDialogPlugin install ---- in AppConfirmDialogPlugin"
+  );
   Vue.confirmDialog = new AppConfirmDialogPlugin(Vue, options);
-
+  console.log(
+    "1 AppConfirmDialogPlugin install ---- in AppConfirmDialogPlugin"
+  );
   Object.defineProperties(Vue.prototype, {
     $confirmDialog: {
       get() {
