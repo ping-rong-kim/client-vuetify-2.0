@@ -87,7 +87,7 @@ export default {
   },
   data: function() {
     return {
-      dialog: true,
+      dialog: false,
       options: {
         title: false,
         text: false,

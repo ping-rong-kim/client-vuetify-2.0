@@ -3,7 +3,7 @@ import AppHelper from "@/helpers/AppHelper";
 import AppEnv from "@/AppEnv";
 
 export default {
-  INACTIVE_USER_TIME_THRESHOLD: AppEnv.VUE_APP_INACTIVE_THRESHOLD_SECONDS * 10,
+  INACTIVE_USER_TIME_THRESHOLD: AppEnv.VUE_APP_INACTIVE_THRESHOLD_SECONDS * 5,
   USER_ACTIVITY_THROTTLER_TIME:
     AppEnv.VUE_APP_ACTIVITY_THROTTLER_SECONDS * 1000,
   userActivityTimeout: null,
@@ -18,9 +18,11 @@ export default {
   init() {
     this.resetUserActivityTimeout = this.resetUserActivityTimeout.bind(this);
     this.resetUserActivityTimeout();
-    AjaxApiService.onJwtTokenSet = lifeTime => {
-      this.resetSessionAboutTimeout(lifeTime);
-      this.resetSessionExpireTimeout(lifeTime);
+
+    AjaxApiService.onJwtTokenSet = leftTime => {
+      console.log("leftTime=" + leftTime);
+      this.resetSessionAboutTimeout(leftTime);
+      this.resetSessionExpireTimeout(leftTime);
     };
   },
   resetUserActivityTimeout() {
@@ -59,7 +61,12 @@ export default {
     this.removeActivityListener();
     if (this.onInactive && !this.isSessionAboutCalled) {
       console.log(
-        "I am In inactiveUserAction of AcitivityHelper !!!!" + this.onInactive()
+        "I am In USER_ACTIVITY_THROTTLER_TIME of AcitivityHelper !!!!" +
+          this.USER_ACTIVITY_THROTTLER_TIME
+      );
+      console.log(
+        "I am In inactiveUserAction of AcitivityHelper !!!!" +
+          this.INACTIVE_USER_TIME_THRESHOLD
       );
       this.isInactiveCalled = true;
       this.onInactive();

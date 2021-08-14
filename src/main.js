@@ -8,7 +8,9 @@ import store from "@/store";
 import AppEnv from "@/AppEnv";
 
 import vuetify from "@/plugins/vuetify";
-
+// import Vuetify from "vuetify";
+// Vue.use(Vuetify);
+// import "vuetify/dist/vuetify.min.css";
 import VueHead from "vue-head";
 import VueAnalytics from "vue-analytics";
 import "@/assets/scss/main.scss";
@@ -340,6 +342,7 @@ new Vue({
       delete registration.personalDetails.password;
       this.$store.dispatch("setRegistration", registration);
     }
+    console.log("before dialog mount  ---- in main");
     this.$confirmDialog.mountIfNotMounted();
     this.$store.commit("clientCenter/setCurrentPageUnSavedChange", false);
     InactivityHelper.init();

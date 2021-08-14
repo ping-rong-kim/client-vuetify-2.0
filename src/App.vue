@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" data-app app-data="true" light>
     <v-app class="textBlack--text" id="inspire">
       <page-header name="page-header" />
       <page-content :class="{ 'require-corner-dot path-frontpage': isHome }" />
