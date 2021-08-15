@@ -61,14 +61,6 @@ export default {
     clearTimeout(this.addActivityListenerTimeout);
     this.removeActivityListener();
     if (this.onInactive && !this.isSessionAboutCalled) {
-      console.log(
-        "I am In USER_ACTIVITY_THROTTLER_TIME of AcitivityHelper !!!!" +
-          this.USER_ACTIVITY_THROTTLER_TIME
-      );
-      console.log(
-        "I am In inactiveUserAction of AcitivityHelper !!!!" +
-          this.INACTIVE_USER_TIME_THRESHOLD
-      );
       this.isInactiveCalled = true;
       this.onInactive();
     }
