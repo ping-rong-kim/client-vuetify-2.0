@@ -91,114 +91,112 @@
         fixed
         v-model="drawer"
         app
-        dark
+        light
         class="primary"
         :width="205"
         v-if="$vuetify.breakpoint.smAndDown"
       >
-        <v-list nav dense light color="primary" flat>
-          <v-list-item-group active-class="bg-active">
+        <v-list dense light color="primary" flat>
+          <v-list-item
+            to="/"
+            @click="$ga.event('Navgation', 'Click', 'HomeBtn')"
+          >
+            <v-list-item-action>
+              <v-icon>home</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Home</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item
+            :id="$_generateAttrID('aboutNav')"
+            :data-cy="$_generateAttrID('aboutNav')"
+            to="/about"
+            v-if="!isLoggedIn || !isInMyAccount"
+          >
+            <v-list-item-action>
+              <v-icon>supervisor_account</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>About us</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <template v-if="isLoggedIn">
             <v-list-item
-              to="/"
-              @click="$ga.event('Navgation', 'Click', 'HomeBtn')"
+              :id="$_generateAttrID('dashboardNav')"
+              :data-cy="$_generateAttrID('dashboardNav')"
+              to="/my-account/dashboard"
+              @click="$ga.event('Navgation', 'Click', 'DashboardBtn')"
             >
+              <!-- @click="$ga.event('Navgation', 'Click', 'DashboardBtn')" -->
               <v-list-item-action>
-                <v-icon>home</v-icon>
+                <div class="dash-icon"></div>
               </v-list-item-action>
               <v-list-item-content>
-                <v-list-item-title>Home</v-list-item-title>
+                <v-list-item-title>Dashboard</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
-            <v-list-item
-              :id="$_generateAttrID('aboutNav')"
-              :data-cy="$_generateAttrID('aboutNav')"
-              to="/about"
-              v-if="!isLoggedIn || !isInMyAccount"
-            >
-              <v-list-item-action>
-                <v-icon>supervisor_account</v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>About us</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-            <template v-if="isLoggedIn">
-              <v-list-item
-                :id="$_generateAttrID('dashboardNav')"
-                :data-cy="$_generateAttrID('dashboardNav')"
-                to="/my-account/dashboard"
-                @click="$ga.event('Navgation', 'Click', 'DashboardBtn')"
-              >
-                <!-- @click="$ga.event('Navgation', 'Click', 'DashboardBtn')" -->
-                <v-list-item-action>
-                  <div class="dash-icon"></div>
-                </v-list-item-action>
-                <v-list-item-content>
-                  <v-list-item-title>Dashboard</v-list-item-title>
-                </v-list-item-content>
-              </v-list-item>
-            </template>
-            <v-list-item
-              :id="$_generateAttrID('signupNav')"
-              :data-cy="$_generateAttrID('signupNav')"
-              v-if="!isLoggedIn"
-              @click="
-                trySignup();
-                $ga.event('Navgation', 'Click', 'SignupBtn');
-              "
-            >
-              <v-list-item-action>
-                <v-icon>meeting_room</v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>Sign up</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
+          </template>
+          <v-list-item
+            :id="$_generateAttrID('signupNav')"
+            :data-cy="$_generateAttrID('signupNav')"
+            v-if="!isLoggedIn"
+            @click="
+              trySignup();
+              $ga.event('Navgation', 'Click', 'SignupBtn');
+            "
+          >
+            <v-list-item-action>
+              <v-icon>meeting_room</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Sign up</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
 
-            <v-list-item
-              :id="$_generateAttrID('loginNav')"
-              :data-cy="$_generateAttrID('loginNav')"
-              to="/login"
-              v-if="!isLoggedIn"
-              @click="$ga.event('Navgation', 'Click', 'LoginBtn')"
-            >
-              <v-list-item-action>
-                <v-icon>power_settings_new</v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>Login</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
+          <v-list-item
+            :id="$_generateAttrID('loginNav')"
+            :data-cy="$_generateAttrID('loginNav')"
+            to="/login"
+            v-if="!isLoggedIn"
+            @click="$ga.event('Navgation', 'Click', 'LoginBtn')"
+          >
+            <v-list-item-action>
+              <v-icon>power_settings_new</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Login</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
 
-            <v-list-item
-              :id="$_generateAttrID('profileNav')"
-              :data-cy="$_generateAttrID('profileNav')"
-              to="/my-account/profile"
-              v-if="isLoggedIn"
-              @click="$ga.event('Navgation', 'Click', 'ProfileBtn')"
-            >
-              <v-list-item-action>
-                <v-icon>mdi-account-circle-outline</v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>My profile</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-            <v-list-item
-              :id="$_generateAttrID('logoutNav')"
-              :data-cy="$_generateAttrID('logoutNav')"
-              @click="logout"
-              v-app-ga="{ category: 'Navigation', label: 'MobileLogout' }"
-              v-if="isLoggedIn"
-            >
-              <v-list-item-action>
-                <v-icon>cancel_presentation</v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>Log out</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list-item-group>
+          <v-list-item
+            :id="$_generateAttrID('profileNav')"
+            :data-cy="$_generateAttrID('profileNav')"
+            to="/my-account/profile"
+            v-if="isLoggedIn"
+            @click="$ga.event('Navgation', 'Click', 'ProfileBtn')"
+          >
+            <v-list-item-action>
+              <v-icon>mdi-account-circle-outline</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>My profile</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item
+            :id="$_generateAttrID('logoutNav')"
+            :data-cy="$_generateAttrID('logoutNav')"
+            @click="logout"
+            v-app-ga="{ category: 'Navigation', label: 'MobileLogout' }"
+            v-if="isLoggedIn"
+          >
+            <v-list-item-action>
+              <v-icon>cancel_presentation</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Log out</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
         </v-list>
       </v-navigation-drawer>
     </div>

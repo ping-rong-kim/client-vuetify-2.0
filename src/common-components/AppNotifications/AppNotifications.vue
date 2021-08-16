@@ -4,6 +4,8 @@
     offset-y
     :close-on-content-click="false"
     v-model="menuOpened"
+    :min-width="minWidth"
+    :max-width="width"
     :max-height="maxHeight"
   >
     <template v-slot:activator="{ on }">

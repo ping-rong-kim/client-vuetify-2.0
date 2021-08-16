@@ -297,10 +297,11 @@
     v-list__tile--active
     v-list__tile v-list__tile--link theme--dark
     */
-::v-deep .mobileNav a.v-list__tile--active {
+::v-deep .mobileNav a.v-list-item--active {
   color: var(--v-textBlack-base) !important;
   font-weight: bold;
 }
+
 ::v-deep #desktopNav > a:not(.no-pad) {
   padding-left: 30px !important;
 }
@@ -346,4 +347,24 @@
       }
     }
   }
+}
+//.v-list-item.theme--light {
+//  &:not(.v-list-item--active) {
+//    &:not(.v-list-item--disabled) {
+//      color: rgb(234 230 230 / 87%) !important;
+//    }
+//  }
+//}
+.v-list-item {
+  &:not(.v-list-item--active) {
+    &:not(.v-list-item--disabled) {
+      color: rgb(234 230 230 / 87%) !important;
+    }
+  }
+}
+//.v-list-item__action.theme--light.v-icon {
+//  color: rgb(239 234 234/54% );
+//}
+.v-list-item__action.v-icon {
+  color: rgb(234 230 230 / 87% );
 }
