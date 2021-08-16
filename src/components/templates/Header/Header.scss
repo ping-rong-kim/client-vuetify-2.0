@@ -327,7 +327,7 @@
       }
       .v-toolbar__items{
         .v-btn{
-          &:not(.v-btn--flat) {
+          &:not(.v-btn--text) {
             height: 36px !important;
             &.login-btn{
               border-radius: 5px;
@@ -336,7 +336,7 @@
             @media all and (max-width: 400px) {
               padding-left: 10px;
               padding-right: 10px;
-              min-width: 80px;
+              min-width: 40px;
             }
             @media all and (max-width: 350px) {
               height: 32px !important;

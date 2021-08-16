@@ -4,8 +4,6 @@
     offset-y
     :close-on-content-click="false"
     v-model="menuOpened"
-    :min-width="minWidth"
-    :max-width="width"
     :max-height="maxHeight"
   >
     <template v-slot:activator="{ on }">
@@ -19,7 +17,7 @@
       </div>
     </template>
     <v-card class="app-notifications">
-      <v-toolbar color="white" class="elevation-0">
+      <v-toolbar color="white" class="elevation-0" flat>
         <v-toolbar-title>Notifications</v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
@@ -28,22 +26,30 @@
         <template v-for="(notification, index) in notifications">
           <v-divider v-if="index"></v-divider>
           <v-list-item :key="index">
-            <v-list-item-content>
-              <b-row style="width: calc(100% + 30px)">
-                <b-col
-                  ><v-list-item-title
-                    style="color: #6EDD9F;"
-                    v-text="notification.title"
-                /></b-col>
-                <b-col class="ml-auto">
-                  <aside class="app-aside__helper-text" style="color: grey">
-                    {{ notification.createdTime }}
-                  </aside>
-                </b-col>
-              </b-row>
+            <v-list-item-content style="padding-top: 0;padding-right: 12px">
+              <v-container style="padding-left: 0">
+                <v-row>
+                  <v-col
+                    ><v-list-item-title
+                      style="color: #6EDD9F;text-align:left;"
+                      v-text="notification.title"
+                    ></v-list-item-title
+                  ></v-col>
+                  <v-col class="ml-auto"
+                    ><v-list-item-title style="text-align:right;"
+                      ><aside
+                        class="app-aside__helper-text"
+                        style="color: grey"
+                      >
+                        {{ notification.createdTime }}
+                      </aside></v-list-item-title
+                    ></v-col
+                  >
+                </v-row>
+              </v-container>
               <v-list-item-subtitle
                 v-text="notification.desc"
-                style="font-size: 11px !important;text-align: left;"
+                style="font-size: 11px !important;text-align: left;padding-right: 12px;"
               />
               <v-list-item-subtitle style="text-align: left;">
                 <router-link
@@ -148,13 +154,7 @@ export default {
   },
   data() {
     return {
-      menuOpened: false,
-      items: [
-        { title: "Click Me" },
-        { title: "Click Me" },
-        { title: "Click Me" },
-        { title: "Click Me 2" }
-      ]
+      menuOpened: false
     };
   },
   methods: {
