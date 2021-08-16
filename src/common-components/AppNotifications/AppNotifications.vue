@@ -62,7 +62,7 @@
                 </router-link>
               </v-list-item-subtitle>
             </v-list-item-content>
-            <v-list-item-action>
+            <v-list-item-action class="align-self-auto">
               <v-tooltip bottom>
                 <template v-slot:activator="{ on }">
                   <v-icon
