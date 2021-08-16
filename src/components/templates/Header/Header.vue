@@ -28,7 +28,7 @@
               <AppNotifications></AppNotifications>
             </v-col>
           </div>
-          <div style="margin-top: 15px;" v-else>
+          <div style="margin-top: 12px;" v-else>
             <v-col class="pa-0">
               <AppNotifications></AppNotifications>
             </v-col>
@@ -55,43 +55,40 @@
             </b-button>
           </span>
         </v-toolbar-items>
-        <v-toolbar-items class="align-center" v-else>
-          <!--          <span style="margin-top:10px;margin-right:20px;" v-if="!isLoggedIn">-->
-          <b-button
-            v-if="!isLoggedIn"
-            normal
-            @click="trySignup"
-            color="primary"
-            :class="{
-              'mr-2': this.$vuetify.breakpoint.width >= 350,
-              'mr-1': this.$vuetify.breakpoint.width < 350
-            }"
-            :id="$_generateAttrID('signupNav')"
-            :data-cy="$_generateAttrID('signupNav')"
-            >Sign up</b-button
-          >
-          <!--          </span>-->
-          <!--          <span style="margin-top:10px;" v-if="!isLoggedIn">-->
-          <b-button
-            v-if="!isLoggedIn"
-            normal
-            to="/login"
-            outline
-            event-category="Navigation"
-            :id="$_generateAttrID('loginNav')"
-            :data-cy="$_generateAttrID('loginNav')"
-            >Login</b-button
-          >
-          <!--          </span>-->
+        <v-toolbar-items v-else>
+          <span style="margin-top:10px;margin-right:20px;" v-if="!isLoggedIn">
+            <b-button
+              normal
+              style="padding-top:5px;padding-bottom:5px;"
+              v-if="!isLoggedIn"
+              @click="trySignup"
+              color="primary"
+              :id="$_generateAttrID('signupNav')"
+              :data-cy="$_generateAttrID('signupNav')"
+              >Sign up</b-button
+            >
+          </span>
+          <span style="margin-top:10px;" v-if="!isLoggedIn">
+            <b-button
+              normal
+              style="padding-top:5px;padding-bottom:5px;"
+              v-if="!isLoggedIn"
+              to="/login"
+              outlined
+              event-category="Navigation"
+              :id="$_generateAttrID('loginNav')"
+              :data-cy="$_generateAttrID('loginNav')"
+              >Login</b-button
+            >
+          </span>
         </v-toolbar-items>
       </v-app-bar>
-
       <v-navigation-drawer
         id="mobileNav"
         fixed
         v-model="drawer"
         app
-        light
+        dark
         class="primary"
         :width="205"
         v-if="$vuetify.breakpoint.smAndDown"
@@ -328,7 +325,7 @@
           padding-left: 5px;
           padding-right: 5px;
           .v-toolbar__items {
-            .v-btn:not(.v-btn--flat) {
+            .v-btn:not(.v-btn--text) {
               padding-left: 10px !important;
               padding-right: 10px !important;
               min-width: 70px !important;
