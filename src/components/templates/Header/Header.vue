@@ -83,6 +83,7 @@
           </span>
         </v-toolbar-items>
       </v-app-bar>
+
       <v-navigation-drawer
         id="mobileNav"
         fixed
