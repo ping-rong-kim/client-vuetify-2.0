@@ -55,32 +55,34 @@
             </b-button>
           </span>
         </v-toolbar-items>
-        <v-toolbar-items v-else>
-          <span style="margin-top:10px;margin-right:20px;" v-if="!isLoggedIn">
-            <b-button
-              normal
-              style="padding-top:5px;padding-bottom:5px;"
-              v-if="!isLoggedIn"
-              @click="trySignup"
-              color="primary"
-              :id="$_generateAttrID('signupNav')"
-              :data-cy="$_generateAttrID('signupNav')"
-              >Sign up</b-button
-            >
-          </span>
-          <span style="margin-top:10px;" v-if="!isLoggedIn">
-            <b-button
-              normal
-              style="padding-top:5px;padding-bottom:5px;"
-              v-if="!isLoggedIn"
-              to="/login"
-              outlined
-              event-category="Navigation"
-              :id="$_generateAttrID('loginNav')"
-              :data-cy="$_generateAttrID('loginNav')"
-              >Login</b-button
-            >
-          </span>
+        <v-toolbar-items class="align-center" v-else>
+          <!--          <span style="margin-top:10px;margin-right:20px;" v-if="!isLoggedIn">-->
+          <b-button
+            v-if="!isLoggedIn"
+            normal
+            @click="trySignup"
+            color="primary"
+            :class="{
+              'mr-2': this.$vuetify.breakpoint.width >= 350,
+              'mr-1': this.$vuetify.breakpoint.width < 350
+            }"
+            :id="$_generateAttrID('signupNav')"
+            :data-cy="$_generateAttrID('signupNav')"
+            >Sign up</b-button
+          >
+          <!--          </span>-->
+          <!--          <span style="margin-top:10px;" v-if="!isLoggedIn">-->
+          <b-button
+            v-if="!isLoggedIn"
+            normal
+            to="/login"
+            outline
+            event-category="Navigation"
+            :id="$_generateAttrID('loginNav')"
+            :data-cy="$_generateAttrID('loginNav')"
+            >Login</b-button
+          >
+          <!--          </span>-->
         </v-toolbar-items>
       </v-app-bar>
 
