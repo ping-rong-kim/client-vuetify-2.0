@@ -126,7 +126,7 @@ export default {
   }
   &.v-btn--disabled,
   &.v-btn--outline.v-btn--disabled {
-    &:not(.v-btn--icon):not(.v-btn--flat).v-btn.theme--light {
+    &:not(.v-btn--icon):not(.v-btn--text).v-btn.theme--light {
       background-color: #999999 !important;
       color: white !important;
     }
@@ -139,16 +139,6 @@ export default {
   }
   &.v-btn--outline {
     color: var(--v-textBlack-base);
-  }
-  &.v-btn.v-btn--is-elevated.v-btn--has-bg {
-    @media all and (max-width: 768px) {
-      min-width: 64px;
-      width: auto;
-      height: auto !important;
-      min-height: 36px;
-      font-size: 16px !important;
-      border-radius: 2px !important;
-    }
   }
 }
 </style>

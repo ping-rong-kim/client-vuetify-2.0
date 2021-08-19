@@ -140,15 +140,5 @@ export default {
   &.v-btn--outline {
     color: var(--v-textBlack-base);
   }
-  &.v-btn.v-btn--is-elevated.v-btn--has-bg {
-    @media all and (max-width: 768px) {
-      min-width: 88px;
-      width: auto;
-      height: auto !important;
-      min-height: 40px;
-      font-size: 16px !important;
-      border-radius: 2px !important;
-    }
-  }
 }
 </style>

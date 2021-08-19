@@ -156,12 +156,11 @@
     border-radius: 5px !important;
     @media all and (max-width: 768px) {
       &, &.v-btn{
-        min-width: 88px;
+        min-width: 88px ;
         width: auto;
         height: auto !important;
         min-height: 50px;
-        //font-size: 12px !important;
-        font-size: 22px !important;
+        font-size: 12px !important;
         border-radius: 2px !important;
       }
     }

@@ -321,6 +321,8 @@
     padding: 0 10px;
   }
 }
+
+
 .app__header{
   .mobileNav{
     .app-mobile-toolbar{
@@ -337,7 +339,7 @@
             @media all and (max-width: 400px) {
               padding-left: 10px;
               padding-right: 10px;
-              min-width: 40px;
+              min-width: 80px;
             }
             @media all and (max-width: 350px) {
               height: 32px !important;

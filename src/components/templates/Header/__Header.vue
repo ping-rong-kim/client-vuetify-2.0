@@ -28,7 +28,7 @@
               <AppNotifications></AppNotifications>
             </v-col>
           </div>
-          <div style="margin-top: 15px;" v-else>
+          <div style="margin-top: 12px;" v-else>
             <v-col class="pa-0">
               <AppNotifications></AppNotifications>
             </v-col>
@@ -325,7 +325,7 @@
           padding-left: 5px;
           padding-right: 5px;
           .v-toolbar__items {
-            .v-btn:not(.v-btn--flat) {
+            .v-btn:not(.v-btn--text) {
               padding-left: 10px !important;
               padding-right: 10px !important;
               min-width: 70px !important;

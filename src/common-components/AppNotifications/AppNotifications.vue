@@ -51,7 +51,7 @@
               </v-container>
               <v-list-item-subtitle
                 v-text="notification.desc"
-                style="font-size: 11px !important;text-align: left;padding-right: 12px;"
+                style="font-size: 11px !important;text-align: justify;padding-right: 12px;text-justify: inter-character"
               />
               <v-list-item-subtitle style="text-align: left;">
                 <router-link

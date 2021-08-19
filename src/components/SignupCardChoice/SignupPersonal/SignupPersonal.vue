@@ -130,7 +130,6 @@
       <v-spacer></v-spacer>
       <b-col>
         <b-button
-          :block="$vuetify.breakpoint.xsOnly"
           :class="{ 'px-1': $vuetify.breakpoint.xsOnly }"
           color="primary"
           dark
